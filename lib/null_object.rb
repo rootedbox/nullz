@@ -1,6 +1,5 @@
 require 'null_object/version'
 
-
 class NullObject
   def method_missing(method, *_args, &_block)
     return false if method.to_s.index('?')
@@ -15,7 +14,7 @@ class NullObject
     ''
   end
 
-  def return_null_object(value)
+  def return_null_object(_value)
     NullObject.new
   end
 
@@ -23,31 +22,31 @@ class NullObject
     [NullObject.new, value]
   end
 
-  def +(value)
+  def +(_value)
     NullObject.new
   end
 
-  def -(value)
+  def -(_value)
     NullObject.new
   end
 
-  def *(value)
+  def *(_value)
     NullObject.new
   end
 
-  def /(value)
+  def /(_value)
     NullObject.new
   end
 
-  def [](value)
+  def [](_value)
     NullObject.new
   end
 
-  def <<(value)
+  def <<(_value)
     NullObject.new
   end
 
-  def >>(value)
+  def >>(_value)
     NullObject.new
   end
 
@@ -59,27 +58,27 @@ class NullObject
     !value.nil?
   end
 
-  def >(value)
+  def >(_value)
     false
   end
 
-  def <(value)
+  def <(_value)
     false
   end
 
-  def |(value)
+  def |(_value)
     NullObject.new
   end
 
-  def ^(value)
+  def ^(_value)
     NullObject.new
   end
 
-  def ~(value)
+  def ~(_value)
     NullObject.new
   end
 
-  def &(value)
+  def &(_value)
     NullObject.new
   end
 
@@ -107,4 +106,3 @@ class NullObject
     true
   end
 end
-

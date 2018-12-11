@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4be049a-d885-4ba7-bdd0-06fc81cfb09b" name="Default Changelist" comment="" />
+    <list default="true" id="b4be049a-d885-4ba7-bdd0-06fc81cfb09b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rakefile" beforeDir="false" afterPath="$PROJECT_DIR$/Rakefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/console" beforeDir="false" afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/null_object.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/null_object.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/null_object/version.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/null_object/version.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/null_object.gemspec" beforeDir="false" afterPath="$PROJECT_DIR$/null_object.gemspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/lib/null_object_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/lib/null_object_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/spec_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +25,7 @@
     <SUITE FILE_PATH="coverage/null_object@NullObject_when_an_operator_is_used_inserts_a_null_object_when_shiting_into_an_array__null_object.rcov" NAME="NullObject when an operator is used inserts a null object when shiting into an array: null_object Coverage Results" MODIFIED="1542600353359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="null_object" />
     <SUITE FILE_PATH="coverage/null_object@spec_helper.rcov" NAME="spec_helper Coverage Results" MODIFIED="1542517059292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spec" MODULE_NAME="null_object" />
     <SUITE FILE_PATH="coverage/null_object@NullObject_when_an_operator_is_used_returns_false_when___to_all_not_nil_or_not_null_objects__null_object.rcov" NAME="NullObject when an operator is used returns false when &gt; to all not nil or not null objects: null_object Coverage Results" MODIFIED="1544506567450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="null_object" />
-    <SUITE FILE_PATH="coverage/null_object@Run_spec__null_object_spec___null_object.rcov" NAME="Run spec 'null_object_spec': null_object Coverage Results" MODIFIED="1544507494951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="null_object" />
+    <SUITE FILE_PATH="coverage/null_object@Run_spec__null_object_spec___null_object.rcov" NAME="Run spec 'null_object_spec': null_object Coverage Results" MODIFIED="1544508691238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="null_object" />
     <SUITE FILE_PATH="coverage/null_object@NullObject_returns_false_if_null_object__null_object.rcov" NAME="NullObject returns false if null_object: null_object Coverage Results" MODIFIED="1544507077475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="null_object" />
     <SUITE FILE_PATH="coverage/null_object@NullObject_when_an_operator_is_used__null_object.rcov" NAME="NullObject when an operator is used: null_object Coverage Results" MODIFIED="1544506450597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="null_object" />
     <SUITE FILE_PATH="coverage/null_object@NullObject_when_an_operator_is_used_returns_a_null_object_with_shift_into_a_non_array__null_object.rcov" NAME="NullObject when an operator is used returns a null object with shift into a non array: null_object Coverage Results" MODIFIED="1544504010076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="null_object" />
@@ -64,16 +73,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spec/lib/null_object_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="106" column="50" selection-start-line="106" selection-start-column="50" selection-end-line="106" selection-end-column="50" />
+            <state relative-caret-position="138">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="19">
@@ -108,8 +117,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/null_object.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-176">
-              <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+            <state relative-caret-position="-99">
+              <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -407,7 +416,7 @@
       <option name="presentableId" value="Default" />
       <updated>1542502563202</updated>
       <workItem from="1542502564314" duration="7352000" />
-      <workItem from="1544503845453" duration="3803000" />
+      <workItem from="1544503845453" duration="4128000" />
     </task>
     <servers />
   </component>
@@ -444,7 +453,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11155000" />
+    <option name="totallyTimeSpent" value="11480000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -544,24 +553,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/null_object.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-176">
-          <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+        <state relative-caret-position="-99">
+          <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/lib/null_object_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="106" column="50" selection-start-line="106" selection-start-column="50" selection-end-line="106" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="138">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
