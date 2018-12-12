@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'null_object/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'NullObject'
+  spec.name          = 'null_object'
   spec.version       =  Nulls::VERSION
   spec.authors       = ['Jason Jacobs']
   spec.email         = ['nerfnerd@gmail.com']
