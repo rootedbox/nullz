@@ -4,14 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'null_object/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'null_object'
+  spec.name          = 'nullz'
   spec.version       =  Nulls::VERSION
   spec.authors       = ['Jason Jacobs']
   spec.email         = ['nerfnerd@gmail.com']
 
   spec.summary       = 'NullObject'
   spec.description   = 'NullObject'
-  spec.homepage      = 'https://github.com/rootedbox/null_object'
+  spec.homepage      = 'https://github.com/rootedbox/nullz'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
