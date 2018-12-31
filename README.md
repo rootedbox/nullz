@@ -1,8 +1,6 @@
 # Nullz a NullObject pattern gem.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/untitled`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Nullz is another null object pattern gem. In general this implementation of the pattern uses the philosophy that if you do nothing to nothing you get nothing. Not 0.. but nothing.. aka Null. If you do nothing to something, or nothing to something you still get nothing.. as you haven't really done anything. Examples below...
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
 
 ## Development
 
@@ -40,4 +38,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Untitled project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/untitled/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Nullz project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/untitled/blob/master/CODE_OF_CONDUCT.md).

@@ -1,16 +1,16 @@
 
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'null_object/version'
+require 'nullz/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'nullz'
-  spec.version       =  Nulls::VERSION
+  spec.version       =  Nullz::VERSION
   spec.authors       = ['Jason Jacobs']
   spec.email         = ['nerfnerd@gmail.com']
 
-  spec.summary       = 'NullObject'
-  spec.description   = 'NullObject'
+  spec.summary       = 'Null Object'
+  spec.description   = 'Null Object Implementation'
   spec.homepage      = 'https://github.com/rootedbox/nullz'
   spec.license       = 'MIT'
 

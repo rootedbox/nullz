@@ -1,5 +1,7 @@
 require "spec_helper"
 
+global_test_variable = 0
+
 RSpec.describe NullObject do
   context 'when an operator is used' do
     it 'returns null object with addition' do
@@ -106,4 +108,54 @@ RSpec.describe NullObject do
   it 'returns a null object with something more complicated' do
     expect(((subject + 3 / (2 ^ 8) * subject).index(3) << 2)[234]).to be_an(NullObject)
   end
+
+  context '_' do
+    it 'returns a NullObject when an item is nil' do
+      result = _(nil)
+      expect(result).to be_an(NullObject)
+    end
+
+    it 'returns a the item when an item is not nil' do
+      item = 3
+      result = _(item)
+      expect(result).to be(item)
+    end
+  end
+
+  context '__' do
+    it 'does not perform a proc ON_NULL_OBJECT_CREATED is set to default' do
+      expect(global_test_variable).to eq(0)
+
+      __(nil)
+
+      expect(global_test_variable).to eq(0)
+    end
+
+    it 'does  perform a proc ON_NULL_OBJECT_CREATED when it is set' do
+      expect(global_test_variable).to eq(0)
+
+      ON_NULL_OBJECT_CREATED = Proc.new { global_test_variable = 10 }
+
+      __(nil)
+
+      expect(global_test_variable).to eq(10)
+    end
+  end
+
+  context 'safe' do
+    it 'uses null objects when USE_NULL_OBJECT is set to true' do
+      USE_NULL_OBJECT = true
+      result = safe(nil)
+
+      expect(result).to be_an(NullObject)
+    end
+
+    it 'does not use  null objects when USE_NULL_OBJECT is set to false' do
+      USE_NULL_OBJECT = false
+      result = safe(nil)
+
+      expect(result).not_to be_an(NullObject)
+    end
+  end
 end
+
