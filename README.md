@@ -1,7 +1,11 @@
-# Nullz a NullObject pattern gem.
+# Nullz a Null Object pattern gem.
+Nullz is a null object pattern gem to safely wrap nils in a do nothing null objects.
+
 [![Build Status](https://travis-ci.org/rootedbox/nullz.svg?branch=master)](https://travis-ci.org/rootedbox/nullz)
 
-Nullz is a null object pattern gem to safely wrap nils in a do nothing null objects.
+
+## Usage
+
 
 
  

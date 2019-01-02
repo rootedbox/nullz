@@ -26,48 +26,30 @@ class NullObject
   end
 
   def to_s
-    to_str
+    ''
   end
 
-  def to_str
-    ''
+  alias_method :to_str, :to_s
+
+  def coerce(value)
+    [NullObject.new, value]
   end
 
   def return_null_object(_value)
     NullObject.new
   end
 
-  def coerce(value)
-    [NullObject.new, value]
-  end
-
-  def +(_value)
-    NullObject.new
-  end
-
-  def -(_value)
-    NullObject.new
-  end
-
-  def *(_value)
-    NullObject.new
-  end
-
-  def /(_value)
-    NullObject.new
-  end
-
-  def [](_value)
-    NullObject.new
-  end
-
-  def <<(_value)
-    NullObject.new
-  end
-
-  def >>(_value)
-    NullObject.new
-  end
+  alias_method :+, :return_null_object
+  alias_method :-, :return_null_object
+  alias_method :*, :return_null_object
+  alias_method :/, :return_null_object
+  alias_method :|, :return_null_object
+  alias_method :^, :return_null_object
+  alias_method :~, :return_null_object
+  alias_method :&, :return_null_object
+  alias_method :[], :return_null_object
+  alias_method :<<, :return_null_object
+  alias_method :>>, :return_null_object
 
   def ==(value)
     value.nil?
@@ -77,40 +59,22 @@ class NullObject
     !value.nil?
   end
 
-  def >(_value)
-    false
-  end
-
-  def <(_value)
-    false
-  end
-
-  def |(_value)
-    NullObject.new
-  end
-
-  def ^(_value)
-    NullObject.new
-  end
-
-  def ~(_value)
-    NullObject.new
-  end
-
-  def &(_value)
-    NullObject.new
-  end
-
   def to_int
     0
   end
 
-  def to_b
+  def to_bool
     false
   end
 
-  def to_bool
-    false
+  alias_method :to_b, :to_bool
+
+  def >(_value)
+    return false
+  end
+
+  def <(_value)
+    return false
   end
 
   def empty?
