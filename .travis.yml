@@ -1,1 +1,9 @@
 language: ruby
+deploy:
+  provider: rubygems
+  api_key:
+    secure: NljDAIxl+Gku+d894m758sm6PFuaaL7GUmmbR87h5GAhgMJJYXEIeRinlFm5LNow09n9ssBu4iSAf28Xg0lNKLGAyLLpS9y3wVQBOd11j+Dp6/M6VCb+Ramb1aLc47RSh8cynWMJQeVGKNv2apP88hITbC+0qAKklY45176s/2xZKSnKq5RStQ76OE0iNTjxtDgZPSALrNmu/C/a6ajIymtIFo+rhTTLl8ZfX+jjTIButl3o+IulRpsiPwPBH/R6eWSoZ69PXc62ZlHK/X9KLTOkYddra0TjjqC+379kYHZNdAWnPL+VQaTJj73Njg9rkxVx+b3QRTSn7je7qyDxwjambSixs7CoM5Sgh69iaMD6Qii1ef7uKvIYj9T9IPi04UaiB8QVH4aukI/BhHbTlkY5IwGr6Mkzoyg257iUoHVOefGmt3sd6/NerM0XRooauZcuNkYutVbwqOkSFumt11XBM+e0Yipsx89w8/lHVpl4f1/d3sXa5aZaqe2nXDtAtsdKu+YWckHQ1HRF8JWTF6IUrWpMlOg9AM+gZKGPQ+B+EZ2WsL6wbGLbMUMyTGW3gOmvmJJ2ebA1AGteYHRSMEuZF5ifU+Q69MpyVq6VTCs9Tj4q2r+KZJrA3XnIRETzPzpNF+D2BwdvefPREg11IOungXGBcF8l1jSe5ytxec8=
+  gem: nullz
+  on:
+    tags: true
+    repo: rootedbox/nullz
