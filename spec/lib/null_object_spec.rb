@@ -2,49 +2,49 @@ require "spec_helper"
 
 global_test_variable = 0
 
-RSpec.describe NullObject do
+RSpec.describe Nullz::NullObject do
   context 'when an operator is used' do
     it 'returns null object with addition' do
-      expect(subject + 3).to be_an(NullObject)
-      expect(3 + subject).to be_an(NullObject)
+      expect(subject + 3).to be_an(Nullz::NullObject)
+      expect(3 + subject).to be_an(Nullz::NullObject)
     end
 
     it 'returns null object with subtraction' do
-      expect(subject - 3).to be_an(NullObject)
-      expect(3 - subject).to be_an(NullObject)
+      expect(subject - 3).to be_an(Nullz::NullObject)
+      expect(3 - subject).to be_an(Nullz::NullObject)
     end
 
     it 'returns null object with division' do
-      expect(subject / 3).to be_an(NullObject)
-      expect(3 / subject).to be_an(NullObject)
+      expect(subject / 3).to be_an(Nullz::NullObject)
+      expect(3 / subject).to be_an(Nullz::NullObject)
     end
 
     it 'returns null object with multiplication' do
-      expect(subject * 3).to be_an(NullObject)
-      expect(3 * subject).to be_an(NullObject)
+      expect(subject * 3).to be_an(Nullz::NullObject)
+      expect(3 * subject).to be_an(Nullz::NullObject)
     end
 
     it 'returns null object with and' do
-      expect(subject & 3).to be_an(NullObject)
-      expect(3 & subject).to be_an(NullObject)
+      expect(subject & 3).to be_an(Nullz::NullObject)
+      expect(3 & subject).to be_an(Nullz::NullObject)
     end
 
     it 'returns null object with xor' do
-      expect(subject ^ 3).to be_an(NullObject)
-      expect(3 ^ subject).to be_an(NullObject)
+      expect(subject ^ 3).to be_an(Nullz::NullObject)
+      expect(3 ^ subject).to be_an(Nullz::NullObject)
     end
 
     it 'returns null object with or' do
-      expect(subject | 3).to be_an(NullObject)
-      expect(3 | subject).to be_an(NullObject)
+      expect(subject | 3).to be_an(Nullz::NullObject)
+      expect(3 | subject).to be_an(Nullz::NullObject)
     end
 
     it 'returns a null object with left shift' do
-      expect(subject << 3).to be_an(NullObject)
+      expect(subject << 3).to be_an(Nullz::NullObject)
     end
 
     it 'returns a null object with right shift' do
-      expect(subject >> 3).to be_an(NullObject)
+      expect(subject >> 3).to be_an(Nullz::NullObject)
     end
 
     it 'inserts a null object when shifting into an array' do
@@ -53,7 +53,7 @@ RSpec.describe NullObject do
       an_array << subject
 
       expect(an_array).to be_an(Array)
-      expect(an_array[1]).to be_an(NullObject)
+      expect(an_array[1]).to be_an(Nullz::NullObject)
     end
 
     it 'returns false when == to all not nil or not null objects' do
@@ -64,12 +64,12 @@ RSpec.describe NullObject do
 
     it 'returns true when == to all nil or null objects' do
       expect(subject == nil).to eq(true)
-      expect(NullObject.new == subject).to eq(true)
+      expect(Nullz::NullObject.new == subject).to eq(true)
     end
 
     it 'returns false when != to all nil or null objects' do
       expect(subject != nil).to eq(false)
-      expect(NullObject.new != subject).to eq(false)
+      expect(Nullz::NullObject.new != subject).to eq(false)
     end
 
     it 'returns true when != to all not nil or not null objects' do
@@ -85,7 +85,7 @@ RSpec.describe NullObject do
 
     it 'returns false when < to all nil or null objects' do
       expect(subject < nil).to eq(false)
-      expect(NullObject.new < subject).to eq(false)
+      expect(Nullz::NullObject.new < subject).to eq(false)
     end
 
     it 'returns false when > to all not nil or not null objects' do
@@ -95,7 +95,7 @@ RSpec.describe NullObject do
 
     it 'returns false when < to all nil or null objects' do
       expect(subject > nil).to eq(false)
-      expect(NullObject.new > subject).to eq(false)
+      expect(Nullz::NullObject.new > subject).to eq(false)
     end
   end
 
@@ -106,13 +106,13 @@ RSpec.describe NullObject do
   end
 
   it 'returns a null object with something more complicated' do
-    expect(((subject + 3 / (2 ^ 8) * subject).index(3) << 2)[234]).to be_an(NullObject)
+    expect(((subject + 3 / (2 ^ 8) * subject).index(3) << 2)[234]).to be_an(Nullz::NullObject)
   end
 
   context '_' do
     it 'returns a NullObject when an item is nil' do
       result = _(nil)
-      expect(result).to be_an(NullObject)
+      expect(result).to be_an(Nullz::NullObject)
     end
 
     it 'returns a the item when an item is not nil' do
@@ -134,7 +134,7 @@ RSpec.describe NullObject do
     it 'does  perform a proc ON_NULL_OBJECT_CREATED when it is set' do
       expect(global_test_variable).to eq(0)
 
-      ON_NULL_OBJECT_CREATED = Proc.new { global_test_variable = 10 }
+      Nullz::ON_NULL_OBJECT_CREATED = Proc.new { global_test_variable = 10 }
 
       __(nil)
 
@@ -144,17 +144,17 @@ RSpec.describe NullObject do
 
   context 'safe' do
     it 'uses null objects when USE_NULL_OBJECT is set to true' do
-      USE_NULL_OBJECT = true
+      Nullz::USE_NULL_OBJECT = true
       result = safe(nil)
 
-      expect(result).to be_an(NullObject)
+      expect(result).to be_an(Nullz::NullObject)
     end
 
     it 'does not use  null objects when USE_NULL_OBJECT is set to false' do
-      USE_NULL_OBJECT = false
+      Nullz::USE_NULL_OBJECT = false
       result = safe(nil)
 
-      expect(result).not_to be_an(NullObject)
+      expect(result).not_to be_an(Nullz::NullObject)
     end
   end
 end
