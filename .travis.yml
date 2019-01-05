@@ -7,3 +7,14 @@ deploy:
   on:
     tags: true
     repo: rootedbox/nullz
+env:
+  global:
+  - CC_TEST_REPORTER_ID=1081a64ece400a4541fa32c7dd47616f8bc0a9e99a2b5ed2b1b3e449660b4b0d
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - bundle exec rspec
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
