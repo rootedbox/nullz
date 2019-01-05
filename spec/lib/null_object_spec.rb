@@ -97,17 +97,69 @@ RSpec.describe Nullz::NullObject do
       expect(subject > nil).to eq(false)
       expect(Nullz::NullObject.new > subject).to eq(false)
     end
+
+    it 'returns a null object with something more complicated' do
+      expect(((subject + 3 / (2 ^ 8) * subject).index(3) << 2)[234]).to be_an(Nullz::NullObject)
+    end
   end
 
-  it 'returns false on any question not concerning assignment' do
-    expect(subject.a_question?).to eq(false)
-    expect(subject.something?).to eq(false)
-    expect(subject.whatever?).to eq(false)
+  context 'to_functions' do
+    it 'returns to_r returns the same value as nil.to_r' do
+      expect(subject.to_r).to eq(nil.to_r)
+    end
+
+    it 'returns to_f returns the same value as nil.to_f' do
+      expect(subject.to_f).to eq(nil.to_f)
+    end
+
+    it 'returns to_i returns the same value as nil.to_i' do
+      expect(subject.to_i).to eq(nil.to_i)
+    end
+
+    it 'returns to_s returns the same value as nil.to_s' do
+      expect(subject.to_s).to eq(nil.to_s)
+    end
+
+    it 'returns to_c returns the same value as nil.to_c' do
+      expect(subject.to_c).to eq(nil.to_c)
+    end
+
+    it 'returns to_b returns false' do
+      expect(subject.to_b).to eq(false)
+    end
   end
 
-  it 'returns a null object with something more complicated' do
-    expect(((subject + 3 / (2 ^ 8) * subject).index(3) << 2)[234]).to be_an(Nullz::NullObject)
+  context 'mock nil functions' do
+    it 'mocks inspect' do
+      expect(subject.inspect).to eq(nil.inspect)
+    end
+
+    it 'mocks rationalize' do
+      expect(subject.rationalize).to eq(nil.rationalize)
+    end
   end
+
+  context 'question functions' do
+    it 'returns true nil?' do
+      expect(subject.nil?).to eq(true)
+    end
+
+    it 'returns true null?' do
+      expect(subject.null?).to eq(true)
+    end
+
+    it 'returns true empty?' do
+      expect(subject.empty?).to eq(true)
+    end
+
+    it 'returns false on all other questions' do
+      expect(subject.assigned?).to eq(false)
+      expect(subject.a_question?).to eq(false)
+      expect(subject.something?).to eq(false)
+      expect(subject.whatever?).to eq(false)
+    end
+  end
+
 
   context '_' do
     it 'returns a NullObject when an item is nil' do

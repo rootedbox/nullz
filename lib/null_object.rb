@@ -21,16 +21,13 @@ module Nullz
   USE_NULL_OBJECT = false
 
   class NullObject
-    def method_missing(method, *_args, &_block)
-      return false if method.to_s.index('?')
-      NullObject.new unless method == :to_ary
+    def inspect
+      nil.inspect
     end
 
-    def to_s
-      ''
+    def rationalize
+      nil.rationalize
     end
-
-    alias_method :to_str, :to_s
 
     def coerce(value)
       [NullObject.new, value]
@@ -60,15 +57,32 @@ module Nullz
       !value.nil?
     end
 
-    def to_int
-      0
+    def to_r
+      nil.to_r
     end
 
-    def to_bool
+    def to_f
+      nil.to_f
+    end
+
+    def to_i
+      nil.to_i
+    end
+
+    def to_s
+      nil.to_s
+    end
+
+    def to_c
+      nil.to_c
+    end
+
+    def to_b
       false
     end
 
-    alias_method :to_b, :to_bool
+    alias_method :to_str, :to_s
+    alias_method :to_bool, :to_b
 
     def >(_value)
       return false
@@ -88,6 +102,11 @@ module Nullz
 
     def null?
       true
+    end
+
+    def method_missing(method, *_args, &_block)
+      return false if method.to_s.index('?')
+      NullObject.new unless method == :to_ary
     end
   end
 end
