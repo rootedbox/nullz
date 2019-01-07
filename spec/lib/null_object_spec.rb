@@ -183,10 +183,10 @@ RSpec.describe Nullz::NullObject do
       expect(global_test_variable).to eq(0)
     end
 
-    it 'does  perform a proc ON_NULL_OBJECT_CREATED when it is set' do
+    it 'does perform a proc Nullz.on_null_object_created when it is set' do
       expect(global_test_variable).to eq(0)
 
-      Nullz::ON_NULL_OBJECT_CREATED = Proc.new { global_test_variable = 10 }
+      Nullz.on_null_object_created = Proc.new { global_test_variable = 10 }
 
       __(nil)
 
@@ -195,15 +195,21 @@ RSpec.describe Nullz::NullObject do
   end
 
   context 'safe' do
-    it 'uses null objects when USE_NULL_OBJECT is set to true' do
-      Nullz::USE_NULL_OBJECT = true
+    it 'uses null objects when Nullz.use_null_object is set to true' do
+      Nullz.use_null_object = true
       result = safe(nil)
 
       expect(result).to be_an(Nullz::NullObject)
     end
 
-    it 'does not use  null objects when USE_NULL_OBJECT is set to false' do
-      Nullz::USE_NULL_OBJECT = false
+    it 'does not use null objects when Nullz.use_null_object is set to false' do
+      Nullz.use_null_object = false
+      result = safe(nil)
+
+      expect(result).not_to be_an(Nullz::NullObject)
+    end
+
+    it 'does not use null objects by default' do
       result = safe(nil)
 
       expect(result).not_to be_an(Nullz::NullObject)

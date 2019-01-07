@@ -4,21 +4,25 @@ def _(obj)
   obj || Nullz::NullObject.new
 end
 
-def __(obj, on_null_object_created_proc = Nullz::ON_NULL_OBJECT_CREATED)
+def __(obj, on_null_object_created_proc = Proc.new { })
   return obj if obj
 
-  on_null_object_created_proc.call
+  (Nullz.on_null_object_created || on_null_object_created_proc).call
 
   Nullz::NullObject.new
 end
 
-def safe(obj, on_null_object_created_proc = Nullz::ON_NULL_OBJECT_CREATED)
-  Nullz::USE_NULL_OBJECT ? __(obj, on_null_object_created_proc) : obj
+def safe(obj, on_null_object_created_proc = Proc.new { })
+  Nullz.use_null_object ? __(obj, on_null_object_created_proc) : obj
 end
 
 module Nullz
-  ON_NULL_OBJECT_CREATED = Proc.new { }
-  USE_NULL_OBJECT = false
+  attr_accessor :on_null_object_created, :use_null_object
+
+  module_function :on_null_object_created
+  module_function :use_null_object
+  module_function :on_null_object_created=
+  module_function :use_null_object=
 
   class NullObject
     def inspect
