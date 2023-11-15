@@ -1,17 +1,16 @@
-# Nullz a Null Object pattern gem.
-Nullz is a null object pattern gem to safely wrap nils in a do nothing null objects.
-
+# Nullz :crystal_ball:
 [![Build Status](https://travis-ci.org/rootedbox/nullz.svg?branch=master)](https://travis-ci.org/rootedbox/nullz)
 [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/rootedbox/nullz)
 [![Gem Version](https://badge.fury.io/rb/nullz.svg)](https://badge.fury.io/rb/nullz)
 
-## Usage
 
+A Ruby gem for elegantly handling `nil` values using the Null Object pattern.
 
+## Introduction :book:
 
- 
+`Nullz` provides a robust way to deal with `nil` values in Ruby. Instead of scattering `nil` checks throughout your code, `Nullz` allows you to handle these cases more gracefully with the `NullObject` pattern. This makes your code cleaner, more readable, and less prone to errors.
 
-## Installation
+## Installation :wrench:
 
 Add this line to your application's Gemfile:
 
@@ -20,31 +19,39 @@ gem 'nullz'
 ```
 
 And then execute:
-
-    $ bundle
+```
+bundle install
+```
 
 Or install it yourself as:
+```
+gem install nullz
+```
 
-    $ gem install nullz
+## Usage :bulb:
 
-## Usage
+### Methods
 
+- `_(obj)`: Returns `obj` unless it's `nil`, in which case it returns a `Nullz::NullObject`.
 
+- `__(obj, on_null_object_created_proc = Proc.new {})`: Similar to `_`, but also allows for a custom procedure when a `NullObject` is created.
 
-## Development
+- `safe(obj, on_null_object_created_proc = Proc.new {})`: Toggles the use of `NullObject` based on the `Nullz.use_null_object` configuration.
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+### Configuration
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Configure `Nullz` in an initializer or similar:
 
-## Contributing
+```ruby
+Nullz.use_null_object = true
+Nullz.on_null_object_created = -> { puts "Null object created!" }
+```
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/rootedbox/nullz. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+### `NullObject` Class
 
-## License
+- Represents `nil` or `null`.
+- This class defines a special kind of object meant to represent `nil` or `null`.
+- It overrides various methods to return either `nil` representations (like in `to_s`, `to_i`, etc.), or a new instance of `NullObject` (in arithmetic and bitwise operations).
+- It also defines behavior for comparison (`==`, `!=`) with `nil` and handling of unknown methods via `method_missing`.
+- Special methods like `nil?`, `null?`, `empty?` are overridden to provide appropriate behavior for a `null` object.
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the Nullz project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/untitled/blob/master/CODE_OF_CONDUCT.md).
